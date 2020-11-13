@@ -13,10 +13,10 @@ public class Preview : MonoBehaviour
 
     BuildSystem buildSystem;
 
-    bool IsSnapped = false;
-    public bool IsFoundation = false;
-
-    public List<string> tags = new List<string>();
+    public bool canPlace = true;
+    
+    MeshRenderer[] children;
+    
 
     void Start()
     {
@@ -33,57 +33,44 @@ public class Preview : MonoBehaviour
 
     void ChangeColour()
     {
-        if(IsSnapped)
+
+        children = GetComponentsInChildren<MeshRenderer>();
+
+        if(children == null)
         {
-            rend.material = goodMat;
-        }
-        else{
-            rend.material = badMat;
+            children[0] = rend;
         }
 
-        if(IsFoundation)
+        if(canPlace)
         {
-            rend.material = goodMat;
-            IsSnapped = true;
+            foreach (MeshRenderer r in children)
+            {
+                r.material = goodMat;
+            } 
+            
+        }
+        else
+        {
+            foreach (MeshRenderer r in children)
+            {
+                r.material = badMat;
+            } 
+            
         }
     }
 
+
     void OnTriggerEnter(Collider other)
     {
-        string currentTag;
-
-        for(int i = 0; i < tags.Count; i++)
-        {
-            currentTag = tags[i]; 
-
-            if(other.tag == currentTag)
-            {
-                buildSystem.PauseBuild(true);
-                transform.position = other.transform.position;
-                IsSnapped = true;
-                ChangeColour();
-            }
-        }
+        canPlace = false;
+        ChangeColour();
+      
     }
 
     void OnTriggerExit(Collider other)
     {
-        string currentTag;
-
-        for(int i = 0; i < tags.Count; i++)
-        {
-            currentTag = tags[i]; 
-
-            if(other.tag == currentTag)
-            {
-                IsSnapped = false;
-                ChangeColour();
-            }
-        }
+        canPlace = true;
+        ChangeColour();
     }
 
-    public bool GetSnapped()
-    {
-        return IsSnapped;
-    }
 }

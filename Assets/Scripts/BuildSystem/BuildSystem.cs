@@ -20,7 +20,7 @@ public class BuildSystem : MonoBehaviour
     void Update()
     {
         // rotate
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && IsBuilding)
         {
             prevGameObject.transform.Rotate(0, 90f, 0);
         }
@@ -34,32 +34,15 @@ public class BuildSystem : MonoBehaviour
         // build
         if (Input.GetMouseButtonDown(0) && IsBuilding)
         {
-            if(prev.GetSnapped())
+            if(prev.canPlace)
             {
-                BuildIt();
-            }
-            else
-            {
-                Debug.Log("Not Snapped");
+               BuildIt();
             }
         }
 
         if (IsBuilding)
         {
-            if(pauseBuilding)
-            {
-                float mouseX = Input.GetAxis("Mouse X");
-                float mouseY = Input.GetAxis("Mouse Y");
-
-                if(Mathf.Abs(mouseX) >= stickTolerance || Mathf.Abs(mouseY) >= stickTolerance)
-                {
-                    pauseBuilding = false;
-                }
-            }
-            else
-            {
-                DoBuildRay();
-            }
+            DoBuildRay();
         }
 
     }
@@ -99,11 +82,9 @@ public class BuildSystem : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, 100f, layer))
         {
-            Debug.Log("??");
             float y = hit.point.y + (prevGameObject.transform.localScale.y / 2f);
             Vector3 pos = new Vector3(hit.point.x, y, hit.point.z);
             prevGameObject.transform.position = pos;
-            //prevGameObject.transform.position = hit.point;
         }
     }
 }
