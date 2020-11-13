@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class BuildManager : MonoBehaviour
     public GameObject archway;
 
     public BuildSystem buildSystem;
+
 
     // Update is called once per frame
     void Update()

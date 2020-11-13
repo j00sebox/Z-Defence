@@ -12,10 +12,7 @@ public class BuildSystem : MonoBehaviour
 
     Preview prev = null;
 
-    public float stickTolerance = 0.25f;
-
     public bool IsBuilding = false;
-    bool pauseBuilding = false;
 
     void Update()
     {
@@ -49,9 +46,12 @@ public class BuildSystem : MonoBehaviour
 
     public void NewBuild(GameObject go)
     {
-        prevGameObject = Instantiate(go, Vector3.zero, Quaternion.identity);
-        prev = prevGameObject.GetComponent<Preview> ();
-        IsBuilding = true;
+        if(!IsBuilding)
+        {
+            IsBuilding = true;
+            prevGameObject = Instantiate(go, Vector3.zero, Quaternion.identity);
+            prev = prevGameObject.GetComponent<Preview> ();
+        }
     }
 
     void CancelBuild()
@@ -68,11 +68,6 @@ public class BuildSystem : MonoBehaviour
         prevGameObject = null;
         prev = null;
         IsBuilding = false;
-    }
-
-    public void PauseBuild(bool _val)
-    {
-        pauseBuilding = _val;
     }
 
     void DoBuildRay()
