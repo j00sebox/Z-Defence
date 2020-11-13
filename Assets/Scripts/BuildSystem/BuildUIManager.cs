@@ -9,6 +9,8 @@ public class BuildUIManager : MonoBehaviour
 
     Canvas canvas;
 
+    public ShopUIManager shopUI;
+
     public GameObject foundation;
 
     public GameObject wall;
@@ -61,7 +63,7 @@ public class BuildUIManager : MonoBehaviour
         {
             canvas.enabled = false;
         }
-        else
+        else if (shopUI.currentScreen == ShopUIManager.CurrentScreen.Build)
         {
             canvas.enabled = true;
         }

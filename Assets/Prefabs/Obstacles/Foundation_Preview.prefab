@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4259277079482415788}
   - component: {fileID: 1210868567799201806}
   m_Layer: 8
-  m_Name: Preview
+  m_Name: Foundation_Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.95, y: 0.95, z: 0.95}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4259277079482415788
 MonoBehaviour:
@@ -110,9 +110,7 @@ MonoBehaviour:
   prefab: {fileID: 1733800895440720827, guid: 9b1429d65d8d0a94a823bc98565faa55, type: 3}
   goodMat: {fileID: 2100000, guid: b74d4b4e3381ab94aa47997bf0101af2, type: 2}
   badMat: {fileID: 2100000, guid: 21e52544c823cba42a7bad6744f3fe9a, type: 2}
-  IsFoundation: 1
-  tags:
-  - Foundation_SP
+  canPlace: 1
 --- !u!54 &1210868567799201806
 Rigidbody:
   m_ObjectHideFlags: 0
