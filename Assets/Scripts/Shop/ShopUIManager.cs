@@ -11,9 +11,11 @@ public class ShopUIManager : MonoBehaviour
     public enum CurrentScreen
     {
         Main,
-        Loadout,
+        Build,
         Armory,
-        Build
+
+        Loadout
+        
     };
 
     public CurrentScreen currentScreen;
