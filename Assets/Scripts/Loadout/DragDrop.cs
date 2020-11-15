@@ -13,6 +13,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     RectTransform rect;
 
+    public Guns.Weapons weaponType;
+
     public bool placed = false;
 
     void Awake()

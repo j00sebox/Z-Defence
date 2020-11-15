@@ -11,7 +11,9 @@ public class Guns : MonoBehaviour
         AssaultRifle,
         SubmachineGun,
         Shotgun,
-        RocketLauncher
+        RocketLauncher,
+
+        None
 
     };
 

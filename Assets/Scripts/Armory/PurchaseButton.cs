@@ -10,6 +10,8 @@ public class PurchaseButton : MonoBehaviour
 
     Text pText;
 
+    public GunUI gunUI;
+
     bool isPurchased = false;
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class PurchaseButton : MonoBehaviour
         if (!isPurchased)
         {
             isPurchased = true;
+            gunUI.purchased = true;
             pText.text = "Buy Ammo";
         }
     }

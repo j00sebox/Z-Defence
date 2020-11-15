@@ -11,7 +11,7 @@ public class WeaponSlot : MonoBehaviour, IDropHandler
 
     public RectTransform pos;
 
-    GameObject item;
+    public GameObject item;
 
     RectTransform itemPos;
 
@@ -27,6 +27,7 @@ public class WeaponSlot : MonoBehaviour, IDropHandler
             if (!item.GetComponent<DragDrop> ().placed)
             {
                 occupied = false;
+                item = null;
             }
         }
     }

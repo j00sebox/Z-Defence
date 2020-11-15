@@ -5,10 +5,10 @@ using UnityEngine;
 public class Loadout : MonoBehaviour
 {
 
-    Guns.Weapons[] loadout;
+    public Guns.Weapons[] loadout;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         loadout = new Guns.Weapons[2];
         loadout[0] = Guns.Weapons.Pistol;
