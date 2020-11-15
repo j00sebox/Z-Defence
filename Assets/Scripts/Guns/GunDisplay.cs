@@ -8,29 +8,43 @@ public class GunDisplay : MonoBehaviour
 
     public Loadout loadout;
 
-    GameObject player;
+    public GameObject player;
 
     GameObject gun;
 
-    Guns.Weapons currentWeapon;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentWeapon = loadout.loadout[0];
-        
-    }
+    int currentLoadoutIndex = 0;
 
     public void SpawnWeapon()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        gun = Instantiate(gunPrefabs[(int)currentWeapon], Vector3.up*3 + Vector3.forward + Vector3.right, gunPrefabs[(int)currentWeapon].transform.rotation);
-        gun.transform.parent = player.transform;
+        if(gun != null)
+        {
+            Destroy(gun);
+        }
+        gun = Instantiate(gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]], player.transform.position + player.transform.forward + player.transform.right, player.transform.rotation * gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]].transform.rotation);
+        gun.transform.parent = player.GetComponentsInChildren<Transform> ()[2].transform;
+    }
+
+    void SwapWeapon()
+    {
+        if (currentLoadoutIndex == 0)
+        {
+            currentLoadoutIndex = 1;
+        }
+        else
+        {
+            currentLoadoutIndex = 0;
+        }
+
+        SpawnWeapon();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SwapWeapon();
+        }
     }
 }

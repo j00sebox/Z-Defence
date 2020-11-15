@@ -19,10 +19,4 @@ public class Loadout : MonoBehaviour
         loadout[0] = weapon1;
         loadout[1] = weapon2;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

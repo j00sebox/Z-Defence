@@ -10,6 +10,7 @@ public class RoundManager : MonoBehaviour
 
     public GameObject player;
 
+
     public GunDisplay gunDisplay;
 
 
@@ -18,7 +19,7 @@ public class RoundManager : MonoBehaviour
         cameraManager.SwitchToPlayer();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Instantiate(player, Vector3.up*3, Quaternion.identity);
+        gunDisplay.player = Instantiate(player, Vector3.up*3, Quaternion.identity);
         gunDisplay.SpawnWeapon();
         roundStarted = true;
     }

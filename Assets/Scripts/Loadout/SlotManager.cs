@@ -17,9 +17,9 @@ public class SlotManager : MonoBehaviour
 
         weapons = GetComponentsInChildren<DragDrop> ();
 
-        // slots[0].item = GetItem(0);
-        // slots[0].item.GetComponent<DragDrop> ().placed = true;
-        // slots[0].occupied = true;
+        slots[0].item = GetItem(0);
+        slots[0].item.GetComponent<DragDrop> ().placed = true;
+        slots[0].occupied = true;
 
         // slots[1].item = GetItem(1);
         // slots[1].item.GetComponent<DragDrop> ().placed = true;

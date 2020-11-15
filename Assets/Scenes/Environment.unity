@@ -5637,6 +5637,7 @@ MonoBehaviour:
   - {fileID: 571609115304590253, guid: 7d6d6a8f9e5e62d45ae99aa283b89a20, type: 3}
   - {fileID: 3914583489414471495, guid: 17654ca9975aeda44b18a85051dd53e5, type: 3}
   loadout: {fileID: 829954850}
+  player: {fileID: 0}
 --- !u!4 &1692831961
 Transform:
   m_ObjectHideFlags: 0
