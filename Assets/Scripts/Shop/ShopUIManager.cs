@@ -14,7 +14,9 @@ public class ShopUIManager : MonoBehaviour
         Build,
         Armory,
 
-        Loadout
+        Loadout,
+
+        None
         
     };
 
@@ -31,18 +33,29 @@ public class ShopUIManager : MonoBehaviour
 
     public void DisplayUI(int index)
     {
-        for (int i = 0; i < otherUIs.Length; i++)
+        if((CurrentScreen)index != CurrentScreen.None)
         {
-            if (i == index)
+            for (int i = 0; i < otherUIs.Length; i++)
             {
-                otherUIs[i].enabled = true;
+                if (i == index)
+                {
+                    otherUIs[i].enabled = true;
+                }
+                else
+                {
+                    otherUIs[i].enabled = false;
+                }
             }
-            else
+        }
+        else
+        {
+            for (int i = 0; i < otherUIs.Length; i++)
             {
                 otherUIs[i].enabled = false;
             }
         }
 
         currentScreen = (CurrentScreen)index;
+        
     }
 }
