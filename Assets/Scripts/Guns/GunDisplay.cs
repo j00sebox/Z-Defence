@@ -21,7 +21,8 @@ public class GunDisplay : MonoBehaviour
             Destroy(gun);
         }
         gun = Instantiate(gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]], player.transform.position + player.transform.forward + player.transform.right, player.transform.rotation * gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]].transform.rotation);
-        gun.transform.parent = player.GetComponentsInChildren<Transform> ()[2].transform;
+        gun.transform.parent = player.GetComponentsInChildren<Transform> ()[1].transform;
+        player.GetComponent<PlayerShooting>().NewRef(gun);
     }
 
     void SwapWeapon()
@@ -35,8 +36,11 @@ public class GunDisplay : MonoBehaviour
             currentLoadoutIndex = 0;
         }
 
-        SpawnWeapon();
-
+        if (loadout.loadout[currentLoadoutIndex] != Guns.Weapons.None)
+        {
+            SpawnWeapon();
+        }
+    
     }
 
     // Update is called once per frame

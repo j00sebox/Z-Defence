@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8248450929415771306}
   - component: {fileID: 8248450929415771309}
   - component: {fileID: 8248450929415771308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arch2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f9c505bf70729fb4589363f2349e0160, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 8248450929766523125}
   - component: {fileID: 8248450929766523124}
   - component: {fileID: 8248450929766523127}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Side2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f9c505bf70729fb4589363f2349e0160, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 8248450929849182249}
   - component: {fileID: 8248450929849182248}
   - component: {fileID: 8248450929849182251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arch1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f9c505bf70729fb4589363f2349e0160, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 8248450930719497551}
   - component: {fileID: 8248450930719497550}
   - component: {fileID: 8248450930719494833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Side1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f9c505bf70729fb4589363f2349e0160, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 8248450930741668960}
   - component: {fileID: 8248450930741668963}
   - component: {fileID: 8248450930741668962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Archway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ Transform:
   m_GameObject: {fileID: 8248450930741668964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0197778, y: 98.27622, z: -2.209281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 8248450930719497548}
   - {fileID: 8248450929766523122}
@@ -454,7 +454,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f9c505bf70729fb4589363f2349e0160, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

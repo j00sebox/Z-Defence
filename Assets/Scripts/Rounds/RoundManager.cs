@@ -10,8 +10,12 @@ public class RoundManager : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject zombie;
+
 
     public GunDisplay gunDisplay;
+
+    public GameObject spawnPoint;
 
 
     public void RoundStart()
@@ -19,7 +23,8 @@ public class RoundManager : MonoBehaviour
         cameraManager.SwitchToPlayer();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        gunDisplay.player = Instantiate(player, Vector3.up*3, Quaternion.identity);
+        gunDisplay.player = Instantiate(player, Vector3.up*15, Quaternion.identity);
+        Instantiate(zombie, spawnPoint.transform.position, Quaternion.identity);
         gunDisplay.SpawnWeapon();
         roundStarted = true;
     }

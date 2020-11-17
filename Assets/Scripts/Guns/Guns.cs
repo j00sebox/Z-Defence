@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guns : MonoBehaviour
+public abstract class Guns : MonoBehaviour
 {
 
     public enum Weapons
@@ -23,15 +23,18 @@ public class Guns : MonoBehaviour
 
     public float timeBetweenShots;
 
-    // Start is called before the first frame update
+    public float range;
+
+    public int shootableMask;
+
+    public float effectsDisplayTime;
+
     void Start()
     {
-        
+        shootableMask = LayerMask.GetMask ("Shootable");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void Shoot();
+
+    public abstract void DisableEffects();
 }

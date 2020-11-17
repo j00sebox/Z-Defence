@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571609115304590252}
+  - component: {fileID: 6292242593260627081}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -23,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571609115304590253}
-  m_LocalRotation: {x: 0.16350068, y: -0.7504524, z: 0.06533638, w: 0.6370401}
-  m_LocalPosition: {x: -0.21691346, y: 0.19243099, z: -0.03770283}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 2302502052998529011}
@@ -33,7 +34,22 @@ Transform:
   - {fileID: 4797591137989645275}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.841002, y: -100.88901, z: -9.808001}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &6292242593260627081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571609115304590253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a6d48e3221acc4281bee05f72be9fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponType: 3
+  purchased: 0
+  timeBetweenShots: 0
 --- !u!1001 &207257580950097699
 PrefabInstance:
   m_ObjectHideFlags: 0

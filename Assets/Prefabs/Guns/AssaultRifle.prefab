@@ -326,6 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8278363145027330059}
   - component: {fileID: 4952269312617140761}
+  - component: {fileID: 6728784012782943351}
   m_Layer: 0
   m_Name: AssaultRifle
   m_TagString: Untagged
@@ -377,6 +378,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6728784012782943351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952269312617140760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc7fa6c43a8f064a85969d7122f1553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponType: 1
+  purchased: 0
+  timeBetweenShots: 20
+  range: 0
+  shootableMask: 0
 --- !u!1 &5409842471469197013
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,9 +11,14 @@ public class AssaultRifle : Guns
         purchased = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Shoot()
     {
-        
+        Debug.Log("AR");
     }
+
+    public override void DisableEffects ()
+    {
+
+    }
+    
 }

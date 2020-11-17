@@ -9,7 +9,7 @@ public class PointsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        points = 1000;
+        points = 10000;
     }
 
     // Update is called once per frame
