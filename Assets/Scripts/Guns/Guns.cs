@@ -29,6 +29,8 @@ public abstract class Guns : MonoBehaviour
 
     public float effectsDisplayTime;
 
+    public int damagePerHit;
+
     void Start()
     {
         shootableMask = LayerMask.GetMask ("Shootable");

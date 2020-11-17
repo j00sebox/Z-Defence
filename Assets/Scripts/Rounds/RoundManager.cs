@@ -23,7 +23,7 @@ public class RoundManager : MonoBehaviour
         cameraManager.SwitchToPlayer();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        gunDisplay.player = Instantiate(player, Vector3.up*15, Quaternion.identity);
+        gunDisplay.player = Instantiate(player, Vector3.up, Quaternion.identity);
         Instantiate(zombie, spawnPoint.transform.position, Quaternion.identity);
         gunDisplay.SpawnWeapon();
         roundStarted = true;

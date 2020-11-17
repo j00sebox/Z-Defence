@@ -30,6 +30,12 @@ public class Pistol : Guns
         // Perform the raycast against gameobjects on the shootable layer and if it hits something...
         if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
         {
+            ZombieHealth zHealth = shootHit.collider.GetComponent<ZombieHealth> ();
+
+            if(zHealth != null)
+            {
+                zHealth.TakeDamage(damagePerHit, shootHit.point);
+            }
             // Set the second position of the line renderer to the point the raycast hit.
             gunLine.SetPosition (1, shootHit.point);
         }

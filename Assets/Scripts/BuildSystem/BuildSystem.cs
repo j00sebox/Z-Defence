@@ -75,7 +75,7 @@ public class BuildSystem : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, 100f, layer))
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, layer))
         {
             float y = hit.point.y + (prevGameObject.transform.localScale.y / 2f);
             Vector3 pos = new Vector3(hit.point.x, y, hit.point.z);

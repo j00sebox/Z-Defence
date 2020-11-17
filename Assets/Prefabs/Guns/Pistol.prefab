@@ -147,6 +147,7 @@ MonoBehaviour:
   range: 100
   shootableMask: 0
   effectsDisplayTime: 0.1
+  damagePerHit: 10
 --- !u!1001 &46240250577733660
 PrefabInstance:
   m_ObjectHideFlags: 0
