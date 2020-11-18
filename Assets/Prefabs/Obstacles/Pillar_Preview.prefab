@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4279462590142169290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.496933, y: 116.418686, z: -49.543064}
-  m_LocalScale: {x: 3, y: 12, z: 3}
+  m_LocalScale: {x: 3, y: 20, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -128,5 +128,3 @@ MonoBehaviour:
   goodMat: {fileID: 2100000, guid: b74d4b4e3381ab94aa47997bf0101af2, type: 2}
   badMat: {fileID: 2100000, guid: 21e52544c823cba42a7bad6744f3fe9a, type: 2}
   canPlace: 1
-  IsFoundation: 0
-  tags: []

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6413188457828512745}
   - component: {fileID: 6413188457828512744}
   - component: {fileID: 6413188457828512759}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Step4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6413188457914433194}
   - component: {fileID: -6828381290962365827}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 6413188457935633428}
   - component: {fileID: 6413188457935633427}
   - component: {fileID: 6413188457935633426}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Step1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 6413188458676723538}
   - component: {fileID: 6413188458676723537}
   - component: {fileID: 6413188458676723536}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Step3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6413188459203047107}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Steps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 6413188459627804202}
   - component: {fileID: 6413188459627804201}
   - component: {fileID: 6413188459627804200}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Step2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
