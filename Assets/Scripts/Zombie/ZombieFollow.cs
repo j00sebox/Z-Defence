@@ -12,6 +12,8 @@ public class ZombieFollow : MonoBehaviour
 
     float speed = 0.1f;
 
+    float walkingSpeed = 0.05f;
+
     ZombieHealth healthScript;
 
     Vector3 targetPosition;
@@ -46,17 +48,29 @@ public class ZombieFollow : MonoBehaviour
             {
                 if(vision.collider.gameObject == player)
                 {
+                    anim.SetBool("IsWalking", false);
                     anim.SetBool("IsRunning", true);
                     transform.position = Vector3.MoveTowards (transform.position, new Vector3(player.transform.position.x, 0f, player.transform.position.z) , speed);
                 }
                 else
                 {
-                    anim.SetBool("IsRunning", false);
+                    Meander();
                 }
                 
+            }
+            else
+            {
+                Meander();
             }
             
         }
         
+    }
+
+    void Meander()
+    {
+        anim.SetBool("IsRunning", false);
+        anim.SetBool("IsWalking", true);
+        transform.position = Vector3.MoveTowards (transform.position, new Vector3(player.transform.position.x, 0f, player.transform.position.z) , walkingSpeed);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZombieHealth : MonoBehaviour
 {
-    int health = 50;
+    public int health = 50;
 
     Animator anim;
 
@@ -23,11 +23,10 @@ public class ZombieHealth : MonoBehaviour
 
     public void TakeDamage(int damageTaken, Vector3 hitPoint)
     {
-        if (!IsDead())
-        {
-            health -= damageTaken;
-        }
-        else
+
+        health -= damageTaken;
+
+        if(IsDead())
         {
             deathType = Random.Range(0, 1);
 
@@ -40,9 +39,11 @@ public class ZombieHealth : MonoBehaviour
                 anim.SetTrigger("Dead2");
             }
 
+            RoundManager.zombiesInRound--;
+            Debug.Log(RoundManager.zombiesInRound);
             PointsManager.points += 10;
-            
         }
+    
     }
 
     private void SetKinematics(bool isKinematic)

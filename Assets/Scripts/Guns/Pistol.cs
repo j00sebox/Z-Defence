@@ -34,7 +34,10 @@ public class Pistol : Guns
 
             if(zHealth != null)
             {
-                zHealth.TakeDamage(damagePerHit, shootHit.point);
+                if(!zHealth.IsDead())
+                {
+                    zHealth.TakeDamage(damagePerHit, shootHit.point);
+                }
             }
             // Set the second position of the line renderer to the point the raycast hit.
             gunLine.SetPosition (1, shootHit.point);

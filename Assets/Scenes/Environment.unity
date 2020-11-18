@@ -295,6 +295,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39470060}
   m_CullTransparentMesh: 0
+--- !u!1 &43301376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43301379}
+  - component: {fileID: 43301378}
+  - component: {fileID: 43301377}
+  m_Layer: 5
+  m_Name: RoundNumber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &43301377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43301376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.81960785, g: 0.38431373, b: 0.23529412, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: ba458c1184541476091009c1abe64a66, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Round: 1'
+--- !u!222 &43301378
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43301376}
+  m_CullTransparentMesh: 0
+--- !u!224 &43301379
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43301376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 616515984}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 221}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &117669177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,6 +2466,7 @@ RectTransform:
   - {fileID: 1327094568}
   - {fileID: 611947074}
   - {fileID: 1424450385}
+  - {fileID: 43301379}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7867,11 +7946,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83bc518988a5b6458d6fb920ce92943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundNumber: 0
+  spawnPoints:
+  - {fileID: 1076209497}
+  - {fileID: 697463883}
+  - {fileID: 1957183319}
+  - {fileID: 682128640}
+  - {fileID: 558214429}
   cameraManager: {fileID: 1432822585}
   player: {fileID: 5706541235782799806, guid: cfd9239f24c14504facd9c184baae049, type: 3}
   zombie: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  roundText: {fileID: 43301377}
   gunDisplay: {fileID: 1692831960}
   spawnPoint: {fileID: 1076209497}
+  shopUI: {fileID: 1348941008}
 --- !u!4 &2012817862
 Transform:
   m_ObjectHideFlags: 0
