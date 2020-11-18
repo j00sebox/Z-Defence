@@ -10,7 +10,7 @@ public class ZombieFollow : MonoBehaviour
 
     Animator anim;
 
-    float speed = 0.05f;
+    float speed = 0.1f;
 
     ZombieHealth healthScript;
 

@@ -38,6 +38,11 @@ public class ZombieHealth : MonoBehaviour
         }
     }
 
+    public int CurrentHealth()
+    {
+        return health;
+    }
+
     public bool IsDead()
     {
         return (health <= 0f);
