@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public int maxHealth = 100;
+    public float maxHealth = 100;
 
-    public int currentHealth;
+    public float currentHealth;
+
+    float newHealth;
+
     public bool godMode = false;
 
     bool damaged;
@@ -16,9 +19,13 @@ public class PlayerHealth : MonoBehaviour
 
     Image damageImage;
 
+    RectTransform healthbar;
+
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
     public float flashSpeed = 5f;
+
+
 
 
     // Start is called before the first frame update
@@ -26,6 +33,10 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         damageImage = GameObject.FindGameObjectWithTag("DamageImage").GetComponent<Image> ();
+
+        healthbar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<RectTransform> ();
+
+        
     }
 
     // Update is called once per frame
@@ -60,8 +71,16 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
 
         // Set the health bar's value to the current health.
-        //healthSlider.value = currentHealth;
-
+        if (currentHealth <= 0)
+        {
+            healthbar.sizeDelta = new Vector2(0, healthbar.sizeDelta.y);
+        }
+        else
+        {
+            newHealth = ( (currentHealth / maxHealth) * 200f );
+            healthbar.sizeDelta = new Vector2( newHealth, healthbar.sizeDelta.y);
+        }
+        
         // Play the hurt sound effect.
         //playerAudio.Play();
 
