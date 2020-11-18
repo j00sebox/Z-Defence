@@ -14,6 +14,8 @@ public class BuildSystem : MonoBehaviour
 
     public bool IsBuilding = false;
 
+    int currentCost;
+
     void Update()
     {
         // rotate
@@ -44,11 +46,13 @@ public class BuildSystem : MonoBehaviour
 
     }
 
-    public void NewBuild(GameObject go)
+    public void NewBuild(GameObject go, int cost)
     {
         if(!IsBuilding)
         {
             IsBuilding = true;
+            Debug.Log(cost);
+            currentCost = cost;
             prevGameObject = Instantiate(go, Vector3.zero, Quaternion.identity);
             prev = prevGameObject.GetComponent<Preview> ();
         }
@@ -65,6 +69,7 @@ public class BuildSystem : MonoBehaviour
     void BuildIt()
     {
         prev.Place();
+        PointsManager.points -= currentCost;
         prevGameObject = null;
         prev = null;
         IsBuilding = false;

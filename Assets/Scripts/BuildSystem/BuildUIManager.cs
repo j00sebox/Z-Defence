@@ -27,6 +27,21 @@ public class BuildUIManager : MonoBehaviour
 
     public BuildSystem buildSystem;
 
+    public int boxCost;
+
+    public int wallCost;
+
+    public int halfwallCost;
+
+    public int pillarCost;
+
+    public int foundationCost;
+
+    public int stairsCost;
+
+    public int archwayCost;
+
+
     void Start()
     {
         images = GetComponentsInChildren<Image>();
@@ -71,36 +86,37 @@ public class BuildUIManager : MonoBehaviour
 
     void ChooseBox()
     {
-        buildSystem.NewBuild(box);
+        buildSystem.NewBuild(box, boxCost);
     }
 
     void ChooseHalfWall()
     {
-        buildSystem.NewBuild(half_wall);
+        buildSystem.NewBuild(half_wall, halfwallCost);
     }   
 
     void ChooseWall()
     {
-        buildSystem.NewBuild(wall);
+        buildSystem.NewBuild(wall, wallCost);
     }
 
     void ChooseFoundation()
     {
-        buildSystem.NewBuild(foundation);
+        Debug.Log(foundationCost);
+        buildSystem.NewBuild(foundation, foundationCost);
     }
 
     void ChoosePillar()
     {
-        buildSystem.NewBuild(pillar);
+        buildSystem.NewBuild(pillar, pillarCost);
     }
 
     void ChooseStairs()
     {
-        buildSystem.NewBuild(stairs);
+        buildSystem.NewBuild(stairs, stairsCost);
     }
 
     void ChooseArchway()
     {
-        buildSystem.NewBuild(archway);
+        buildSystem.NewBuild(archway, archwayCost);
     }
 }
