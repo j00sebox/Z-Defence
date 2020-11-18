@@ -42,7 +42,7 @@ public class ZombieFollow : MonoBehaviour
             targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             transform.LookAt(targetPosition);
 
-            if(Physics.Raycast(transform.position + Vector3.up*17, transform.TransformDirection(Vector3.forward), out vision, 100f))
+            if(Physics.Raycast(transform.position + Vector3.up*17, transform.TransformDirection(Vector3.forward), out vision, 1000f))
             {
                 if(vision.collider.gameObject == player)
                 {
