@@ -25,9 +25,6 @@ public class PlayerHealth : MonoBehaviour
 
     public float flashSpeed = 5f;
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
 
         healthbar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<RectTransform> ();
 
-        
+        UpdateHealthBar();
     }
 
     // Update is called once per frame
@@ -70,16 +67,7 @@ public class PlayerHealth : MonoBehaviour
         // Reduce the current health by the damage amount.
         currentHealth -= amount;
 
-        // Set the health bar's value to the current health.
-        if (currentHealth <= 0)
-        {
-            healthbar.sizeDelta = new Vector2(0, healthbar.sizeDelta.y);
-        }
-        else
-        {
-            newHealth = ( (currentHealth / maxHealth) * 200f );
-            healthbar.sizeDelta = new Vector2( newHealth, healthbar.sizeDelta.y);
-        }
+        UpdateHealthBar();
         
         // Play the hurt sound effect.
         //playerAudio.Play();
@@ -95,5 +83,19 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
 
+    }
+
+    void UpdateHealthBar()
+    {
+        // Set the health bar's value to the current health.
+        if (currentHealth <= 0)
+        {
+            healthbar.sizeDelta = new Vector2(0, healthbar.sizeDelta.y);
+        }
+        else
+        {
+            newHealth = ( (currentHealth / maxHealth) * 200f );
+            healthbar.sizeDelta = new Vector2( newHealth, healthbar.sizeDelta.y);
+        }
     }
 }

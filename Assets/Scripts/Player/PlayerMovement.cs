@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     int sprintMultiplier = 1;
 
+    float gravity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         staminabar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<RectTransform> ();
 
         currentStamina = maxStamina;
+
+        UpdateStamBar();
     }
 
     // Update is called once per frame
@@ -51,8 +55,17 @@ public class PlayerMovement : MonoBehaviour
 
             x = Input.GetAxis("Horizontal");
             z = Input.GetAxis("Vertical");
-
-            Vector3 move = transform.right * x + transform.forward * z;
+            
+            if (!cc.isGrounded)
+            {
+                gravity -= 9.81f * Time.deltaTime;
+            }
+            else
+            {
+                gravity = 0;
+            }
+            
+            Vector3 move = transform.right * x + transform.up * gravity + transform.forward * z;
 
             cc.Move(move * speed * sprintMultiplier * Time.deltaTime);
         }

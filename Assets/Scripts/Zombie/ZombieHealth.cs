@@ -40,7 +40,6 @@ public class ZombieHealth : MonoBehaviour
             }
 
             RoundManager.zombiesInRound--;
-            Debug.Log(RoundManager.zombiesInRound);
             PointsManager.points += 10;
         }
     

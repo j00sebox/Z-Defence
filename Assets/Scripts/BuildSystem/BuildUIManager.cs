@@ -101,7 +101,6 @@ public class BuildUIManager : MonoBehaviour
 
     void ChooseFoundation()
     {
-        Debug.Log(foundationCost);
         buildSystem.NewBuild(foundation, foundationCost);
     }
 

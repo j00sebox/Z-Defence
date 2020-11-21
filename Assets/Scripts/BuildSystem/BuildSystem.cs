@@ -51,7 +51,6 @@ public class BuildSystem : MonoBehaviour
         if(!IsBuilding)
         {
             IsBuilding = true;
-            Debug.Log(cost);
             currentCost = cost;
             prevGameObject = Instantiate(go, Vector3.zero, Quaternion.identity);
             prev = prevGameObject.GetComponent<Preview> ();

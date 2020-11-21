@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5706541234408363246}
   - component: {fileID: 5706541234408363247}
   - component: {fileID: 5706541234408363240}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -108,13 +108,13 @@ GameObject:
   - component: {fileID: 5706541235782799802}
   - component: {fileID: 5706541235782799803}
   - component: {fileID: 5706541235782799800}
-  - component: {fileID: 5706541235782799801}
   - component: {fileID: 5706541235782799799}
   - component: {fileID: -332769225744377126}
   - component: {fileID: 1920862291}
   - component: {fileID: 843158946}
   - component: {fileID: 6585540669626348438}
-  m_Layer: 0
+  - component: {fileID: 9072132993478920937}
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -183,20 +183,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &5706541235782799801
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5706541235782799806}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 5
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5706541235782799799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
+  maxStamina: 100
+  staminaRegen: 0.5
 --- !u!114 &-332769225744377126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,12 +236,12 @@ Rigidbody:
   m_GameObject: {fileID: 5706541235782799806}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: Infinity
-  m_AngularDrag: Infinity
+  m_Drag: 1
+  m_AngularDrag: 0.2
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!143 &6585540669626348438
 CharacterController:
@@ -266,10 +254,24 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 15
+  m_Radius: 1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -5, z: 0}
+--- !u!136 &9072132993478920937
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5706541235782799806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 15
+  m_Direction: 1
+  m_Center: {x: 0, y: -5, z: 0}
