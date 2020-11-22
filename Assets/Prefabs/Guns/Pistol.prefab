@@ -148,6 +148,11 @@ MonoBehaviour:
   shootableMask: 0
   effectsDisplayTime: 0.1
   damagePerHit: 10
+  magSize: 0
+  maxAmmo: 75
+  totalAmmo: 75
+  ammoinMag: 0
+  ammoPerBuy: 10
 --- !u!1001 &46240250577733660
 PrefabInstance:
   m_ObjectHideFlags: 0

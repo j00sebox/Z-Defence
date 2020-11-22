@@ -38,6 +38,8 @@ public abstract class Guns : MonoBehaviour
 
     public int magSize;
 
+    public int maxAmmo;
+
     public int totalAmmo;
 
     public int ammoinMag;
@@ -83,6 +85,8 @@ public abstract class Guns : MonoBehaviour
             // ... set the second position of the line renderer to the fullest extent of the gun's range.
             gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
         }
+
+        totalAmmo--;
     }
 
     public virtual void DisableEffects()

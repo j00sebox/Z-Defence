@@ -51,6 +51,11 @@ MonoBehaviour:
   shootableMask: 0
   effectsDisplayTime: 0.15
   damagePerHit: 15
+  magSize: 0
+  maxAmmo: 200
+  totalAmmo: 0
+  ammoinMag: 0
+  ammoPerBuy: 15
 --- !u!120 &6110083191678444224
 LineRenderer:
   m_ObjectHideFlags: 0

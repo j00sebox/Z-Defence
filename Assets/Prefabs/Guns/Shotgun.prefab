@@ -50,6 +50,14 @@ MonoBehaviour:
   weaponType: 3
   purchased: 0
   timeBetweenShots: 0
+  range: 0
+  shootableMask: 0
+  effectsDisplayTime: 0
+  damagePerHit: 0
+  magSize: 0
+  maxAmmo: 30
+  totalAmmo: 0
+  ammoinMag: 0
 --- !u!1001 &207257580950097699
 PrefabInstance:
   m_ObjectHideFlags: 0

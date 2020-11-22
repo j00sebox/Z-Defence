@@ -16,7 +16,11 @@ public class PurchaseButton : MonoBehaviour
 
     public int ammoCost;
 
+    public int ammoPerBuy;
+
     bool isPurchased = false;
+
+    public int ammoIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +33,7 @@ public class PurchaseButton : MonoBehaviour
 
     void Purchase()
     {
-        if (!isPurchased)
+        if (!gunUI.purchased)
         {
             if (PointsManager.points >= gunCost)
             {
@@ -37,6 +41,13 @@ public class PurchaseButton : MonoBehaviour
                 isPurchased = true;
                 gunUI.purchased = true;
                 pText.text = "Buy Ammo";
+            }
+        }
+        else
+        {
+            if (PointsManager.points >= ammoCost)
+            {
+                AmmoManager.guns[ammoIndex] += ammoPerBuy;
             }
         }
     }

@@ -14,6 +14,8 @@ public class GunDisplay : MonoBehaviour
 
     int currentLoadoutIndex = 0;
 
+    public Guns.Weapons currentWeapon;
+
     public void SpawnWeapon()
     {
         if(gun != null)
@@ -38,6 +40,7 @@ public class GunDisplay : MonoBehaviour
 
         if (loadout.loadout[currentLoadoutIndex] != Guns.Weapons.None)
         {
+            currentWeapon = loadout.loadout[currentLoadoutIndex];
             SpawnWeapon();
         }
     
