@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc7fa6c43a8f064a85969d7122f1553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 1
   purchased: 0
   timeBetweenShots: 0.1
   range: 1000
@@ -55,7 +55,6 @@ MonoBehaviour:
   maxAmmo: 200
   totalAmmo: 0
   ammoinMag: 0
-  ammoPerBuy: 15
 --- !u!120 &6110083191678444224
 LineRenderer:
   m_ObjectHideFlags: 0

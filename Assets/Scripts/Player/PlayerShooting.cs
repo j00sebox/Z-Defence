@@ -25,7 +25,7 @@ public class PlayerShooting : MonoBehaviour
     public void NewRef(GameObject gun)
     {
         gunScript = gun.GetComponentInChildren<Guns> ();
-        AmmoManager.currentAmmo = gunScript.totalAmmo;
+        // = gunScript.totalAmmo;
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class PlayerShooting : MonoBehaviour
             // Add the time since Update was last called to the timer.
             timer += Time.deltaTime;
 
-            if (timer >= gunScript.timeBetweenShots && Time.timeScale != 0 && gunScript.totalAmmo > 0)
+            if (timer >= gunScript.timeBetweenShots && Time.timeScale != 0 && AmmoManager.currentAmmo > 0)
             {
                 if( Input.GetButton("Fire1") )
                 {

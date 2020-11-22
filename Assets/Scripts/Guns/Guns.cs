@@ -12,7 +12,6 @@ public abstract class Guns : MonoBehaviour
         SubmachineGun,
         Shotgun,
         RocketLauncher,
-
         None
 
     };
@@ -48,7 +47,7 @@ public abstract class Guns : MonoBehaviour
     {
         shootableMask = LayerMask.GetMask ("Shootable");
 
-        gunLine = GetComponent <LineRenderer> ();
+        gunLine = GetComponentInChildren <LineRenderer> ();
     }
 
     public virtual void Shoot()
@@ -86,7 +85,7 @@ public abstract class Guns : MonoBehaviour
             gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
         }
 
-        totalAmmo--;
+        AmmoManager.guns[(int)weaponType].amount--;
     }
 
     public virtual void DisableEffects()
