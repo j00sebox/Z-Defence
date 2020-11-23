@@ -40,7 +40,7 @@ public class RoundManager : MonoBehaviour
         roundText.text = "Round: " + ++roundNumber;
         CalculateDifficulty();
         zombiesInRound = numZombies;
-        SpawnZombies();
+        StartCoroutine(SpawnZombies());
     }
 
     void CalculateDifficulty()
@@ -49,12 +49,12 @@ public class RoundManager : MonoBehaviour
         if(roundNumber % 5 == 0) numZombies += 5;
     }
 
-    void SpawnZombies()
+    IEnumerator SpawnZombies()
     {
         for (int i = 0; i < numZombies; i++)
         {
-            int rand = Random.Range(0, spawnPoints.Count - 1);
-            Instantiate(zombie, spawnPoints[rand].transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(1f);
+            Instantiate(zombie, spawnPoints[i % 5].transform.position, Quaternion.identity);
         }
     }
 
