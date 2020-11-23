@@ -62,6 +62,8 @@ public class ZombieFollow : MonoBehaviour
             {
                 Meander();
             }
+
+            
             
         }
         

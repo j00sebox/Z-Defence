@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Sprint()
     {
-        currentStamina -= 10 * Time.deltaTime;
+        // currentStamina -= 10 * Time.deltaTime;
         UpdateStamBar();
     }
 

@@ -8665,6 +8665,7 @@ MonoBehaviour:
   - {fileID: 9188819542737150972, guid: 361b4312c11c4e44abc879f7d30fd87d, type: 3}
   - {fileID: 571609115304590253, guid: 7d6d6a8f9e5e62d45ae99aa283b89a20, type: 3}
   - {fileID: 3914583489414471495, guid: 17654ca9975aeda44b18a85051dd53e5, type: 3}
+  - {fileID: 7632110322460943051, guid: 52f24945537395f4fab7212bdeb9e19a, type: 3}
   loadout: {fileID: 829954850}
   player: {fileID: 0}
   currentWeapon: 0

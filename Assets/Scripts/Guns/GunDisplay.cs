@@ -22,7 +22,7 @@ public class GunDisplay : MonoBehaviour
         {
             Destroy(gun);
         }
-        gun = Instantiate(gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]], player.transform.position + player.transform.forward + player.transform.right, player.transform.rotation * gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]].transform.rotation);
+        gun = Instantiate(gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]], player.transform.position + player.transform.forward + player.transform.right + gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]].transform.position, player.transform.rotation * gunPrefabs[(int)loadout.loadout[currentLoadoutIndex]].transform.rotation);
         gun.transform.parent = player.GetComponentsInChildren<Transform> ()[1].transform;
         player.GetComponent<PlayerShooting>().NewRef(gun);
     }
@@ -38,11 +38,10 @@ public class GunDisplay : MonoBehaviour
             currentLoadoutIndex = 0;
         }
 
-        if (loadout.loadout[currentLoadoutIndex] != Guns.Weapons.None)
-        {
-            currentWeapon = loadout.loadout[currentLoadoutIndex];
-            SpawnWeapon();
-        }
+        
+        currentWeapon = loadout.loadout[currentLoadoutIndex];
+        SpawnWeapon();
+       
     
     }
 

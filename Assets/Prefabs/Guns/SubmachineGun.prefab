@@ -55,7 +55,6 @@ MonoBehaviour:
   maxAmmo: 250
   totalAmmo: 0
   ammoinMag: 0
-  ammoPerBuy: 25
 --- !u!120 &1021235634
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -166,15 +165,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 11604b6592771e049af136d2cae807b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -394.59354
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 11604b6592771e049af136d2cae807b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 139.90982
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 11604b6592771e049af136d2cae807b4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.235634
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 11604b6592771e049af136d2cae807b4, type: 3}
       propertyPath: m_LocalRotation.x
