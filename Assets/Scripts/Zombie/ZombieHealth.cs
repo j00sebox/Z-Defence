@@ -40,7 +40,9 @@ public class ZombieHealth : MonoBehaviour
             }
 
             RoundManager.zombiesInRound--;
-            PointsManager.points += 10;
+            PointsManager.points += 10 * ComboManager.comboMultiplier;
+            ComboManager.zombieKilled = true;
+            SetKinematics(true);
         }
     
     }
@@ -68,7 +70,7 @@ public class ZombieHealth : MonoBehaviour
         if(IsDead())
         {
             transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
-            if (transform.position.y < -10f)
+            if (transform.position.y < -5f)
             {
                 Destroy(this.gameObject);
             }

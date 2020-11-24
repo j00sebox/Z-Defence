@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PointsManager : MonoBehaviour
 {
-    public static int points;
+    public static float points;
 
     // Start is called before the first frame update
     void Start()
