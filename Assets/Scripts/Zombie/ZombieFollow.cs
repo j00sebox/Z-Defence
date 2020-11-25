@@ -39,7 +39,7 @@ public class ZombieFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!healthScript.IsDead())
+        if(!healthScript.IsDead() && !PauseManager.Paused)
         {
             targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             transform.LookAt(targetPosition);

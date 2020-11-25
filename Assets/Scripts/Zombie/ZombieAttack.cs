@@ -43,23 +43,27 @@ public class ZombieAttack : MonoBehaviour
     }
 
     void Update ()
-    {      
-        // Add the time since Update was last called to the timer.
-        timer += Time.deltaTime;
-
-        // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-        if(timer >= timeBetweenAttacks && playerInRange && zHealth.CurrentHealth() > 0)
+    {   
+        if(!PauseManager.Paused)
         {
-            // ... attack.
-            Attack ();
-        }
+            // Add the time since Update was last called to the timer.
+            timer += Time.deltaTime;
 
-        // If the player has zero or less health...
-        // if(playerHealth.currentHealth <= 0)
-        // {
-        //     // ... tell the animator the player is dead.
-        //     anim.SetTrigger ("PlayerDead");
-        // }
+            // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
+            if(timer >= timeBetweenAttacks && playerInRange && zHealth.CurrentHealth() > 0)
+            {
+                // ... attack.
+                Attack ();
+            }
+
+            // If the player has zero or less health...
+            // if(playerHealth.currentHealth <= 0)
+            // {
+            //     // ... tell the animator the player is dead.
+            //     anim.SetTrigger ("PlayerDead");
+            // }
+        }
+        
     }
 
     void Attack ()

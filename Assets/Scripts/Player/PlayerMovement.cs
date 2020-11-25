@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(RoundManager.roundStarted)
+        if(RoundManager.roundStarted && !PauseManager.Paused)
         {
 
             if (Input.GetKey(KeyCode.LeftShift) && currentStamina >= 0)

@@ -53,6 +53,7 @@ public class RoundManager : MonoBehaviour
     {
         for (int i = 0; i < numZombies; i++)
         {
+            while (PauseManager.Paused) { yield return null; }
             yield return new WaitForSeconds(1f);
             Instantiate(zombie, spawnPoints[i % 5].transform.position, Quaternion.identity);
         }

@@ -16,6 +16,18 @@ public class PauseManager : MonoBehaviour
             if(!Controls)
             {
                 Paused = !Paused;
+
+                Cursor.visible = Paused;
+
+                if(Paused)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+                
             }
         }
     }

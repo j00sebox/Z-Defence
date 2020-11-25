@@ -22,7 +22,7 @@ public class fpCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(RoundManager.roundStarted)
+        if(RoundManager.roundStarted && !PauseManager.Paused)
         {
             MouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
             MouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;

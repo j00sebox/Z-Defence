@@ -43,7 +43,7 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(RoundManager.roundStarted)
+        if(RoundManager.roundStarted && !PauseManager.Paused)
         {
             // Add the time since Update was last called to the timer.
             timer += Time.deltaTime;
