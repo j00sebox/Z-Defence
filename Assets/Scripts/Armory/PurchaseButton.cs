@@ -29,12 +29,17 @@ public class PurchaseButton : MonoBehaviour
     public Text gunCostText;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         purchase = GetComponent<Button>();
         pText = purchase.GetComponentInChildren<Text> ();
 
         purchase.onClick.AddListener(Purchase);    
+    }
+
+    void OnEnable()
+    {
+        ammoText.text = "Ammo: " + AmmoManager.guns[ammoIndex].amount;
     }
 
     void Purchase()

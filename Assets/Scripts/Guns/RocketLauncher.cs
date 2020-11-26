@@ -57,6 +57,8 @@ public class RocketLauncher : Guns
             }
             
         }
+
+        AmmoManager.guns[(int)weaponType].amount--;
     }
 
     public override void DisableEffects ()

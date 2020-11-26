@@ -17,18 +17,25 @@ public class PauseManager : MonoBehaviour
             {
                 Paused = !Paused;
 
-                Cursor.visible = Paused;
-
-                if(Paused)
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                }
-                else
-                {
-                    Cursor.lockState = CursorLockMode.Locked;
-                }
+                CursorVisible();
                 
             }
+        }
+    }
+
+    public static void CursorVisible()
+    {
+        bool vis = ( Paused || !RoundManager.roundStarted );
+
+        Cursor.visible = vis;
+
+        if(vis)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

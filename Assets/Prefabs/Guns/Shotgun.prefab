@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 3
   purchased: 0
+  offset: 1
   timeBetweenShots: 1
   range: 20
   shootableMask: 0

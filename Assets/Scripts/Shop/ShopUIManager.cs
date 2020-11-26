@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShopUIManager : MonoBehaviour
 {
 
-    Canvas[] otherUIs;
+    public GameObject[] otherUIs;
 
     public enum CurrentScreen
     {
@@ -26,7 +26,6 @@ public class ShopUIManager : MonoBehaviour
     void Start()
     {
         currentScreen = CurrentScreen.Main;
-        otherUIs = GetComponentsInChildren<Canvas> ();
 
         DisplayUI((int)currentScreen);
     }
@@ -39,11 +38,11 @@ public class ShopUIManager : MonoBehaviour
             {
                 if (i == index)
                 {
-                    otherUIs[i].enabled = true;
+                    otherUIs[i].gameObject.SetActive(true);
                 }
                 else
                 {
-                    otherUIs[i].enabled = false;
+                    otherUIs[i].gameObject.SetActive(false);
                 }
             }
         }
@@ -51,7 +50,7 @@ public class ShopUIManager : MonoBehaviour
         {
             for (int i = 0; i < otherUIs.Length; i++)
             {
-                otherUIs[i].enabled = false;
+                otherUIs[i].gameObject.SetActive(false);
             }
         }
 

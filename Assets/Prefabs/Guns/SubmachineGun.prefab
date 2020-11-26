@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62d01c892af52f43a7c8e1d6929cc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 2
   purchased: 0
-  timeBetweenShots: 0.5
+  offset: 1
+  timeBetweenShots: 0.1
   range: 60
   shootableMask: 0
   effectsDisplayTime: 0.15

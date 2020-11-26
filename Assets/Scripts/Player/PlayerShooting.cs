@@ -14,11 +14,7 @@ public class PlayerShooting : MonoBehaviour
 
     float timeBetweenMelee = 0.5f;
 
-    SphereCollider meleeRange;
-
-    ZombieHealth enemeyAttacked;
-
-    bool enemyInRange = false;
+    
 
     public int meleeDamage = 5;
 
@@ -29,9 +25,7 @@ public class PlayerShooting : MonoBehaviour
 
         gun = cam.GetComponentsInChildren<Transform> ()[1];
 
-        gunScript = gun.GetComponentInChildren<Guns> ();
-
-        meleeRange = GetComponent<SphereCollider> ();
+        gunScript = gun.GetComponentInChildren<Guns> (); 
     }
 
     public void NewRef(GameObject gun)
@@ -66,42 +60,6 @@ public class PlayerShooting : MonoBehaviour
                     gunScript.DisableEffects();
                 }
             }
-            else
-            {
-                if (timer >= timeBetweenMelee && Time.timeScale != 0)
-                {
-                    if( Input.GetButton("Fire1") && enemyInRange )
-                    {
-                        timer = 0f;
-                        Scrap();
-                    }
-                }
-            }
         }
-    }
-
-    void Scrap()
-    {
-        ZombieHealth zHealthScript = enemeyAttacked.GetComponent<ZombieHealth> ();
-        zHealthScript.TakeDamage(meleeDamage, Vector3.zero);
-        GetComponentInChildren<Fist> ().SetAnim();
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-
-        
-        GameObject obj = other.gameObject;
-        enemeyAttacked = obj.GetComponent<ZombieHealth> ();
-
-        if(enemeyAttacked != null)
-        {
-            enemyInRange = true;
-        }
-    }
-    
-    void OnTriggerExit(Collider other)
-    {
-        enemyInRange = false;
     }
 }

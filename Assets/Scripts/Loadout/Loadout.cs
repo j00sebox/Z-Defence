@@ -7,6 +7,7 @@ public class Loadout : MonoBehaviour
 
     public Guns.Weapons[] loadout;
 
+    
     // Start is called before the first frame update
     void Awake()
     {

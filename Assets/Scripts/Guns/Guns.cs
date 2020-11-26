@@ -20,6 +20,8 @@ public abstract class Guns : MonoBehaviour
 
     public bool purchased;
 
+    public float offset;
+
     public float timeBetweenShots;
 
     public float range;

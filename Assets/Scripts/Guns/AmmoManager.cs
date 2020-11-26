@@ -24,6 +24,8 @@ public class AmmoManager : MonoBehaviour
         guns[2].maxAmmo = 300;
         guns[3].maxAmmo = 30;
         guns[4].maxAmmo = 10;
+
+        guns[0].amount = guns[0].maxAmmo;
     }
 
     void Update()
@@ -48,6 +50,9 @@ public class AmmoManager : MonoBehaviour
 
             case Guns.Weapons.RocketLauncher:
                 currentAmmo = guns[(int)Guns.Weapons.RocketLauncher].amount;
+                break;
+            default:
+                currentAmmo = 1;
                 break;
         }   
     }

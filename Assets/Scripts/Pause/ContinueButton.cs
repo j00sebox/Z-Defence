@@ -18,7 +18,6 @@ public class ContinueButton : MonoBehaviour
     void UnPause()
     {
         PauseManager.Paused = false;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        PauseManager.CursorVisible();
     }
 }

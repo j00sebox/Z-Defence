@@ -28,15 +28,27 @@ public class RoundManager : MonoBehaviour
 
     public ShopUIManager shopUI;
 
+    void Start()
+    {
+        Reset();
+    }
+
+    void Reset()
+    {
+        roundNumber = 0;
+        roundStarted = false;
+        PauseManager.Paused = false;
+        PauseManager.Controls = false;
+    }
+
 
     public void RoundStart()
     {
         cameraManager.SwitchToPlayer();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         gunDisplay.player = Instantiate(player, Vector3.up*15, Quaternion.identity);
         gunDisplay.SpawnWeapon();
         roundStarted = true;
+        PauseManager.CursorVisible();
         roundText.text = "Round: " + ++roundNumber;
         CalculateDifficulty();
         zombiesInRound = numZombies;
@@ -65,8 +77,7 @@ public class RoundManager : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         cameraManager.SwitchToShop();
         shopUI.DisplayUI((int)ShopUIManager.CurrentScreen.Main);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        PauseManager.CursorVisible();
     }
 
     // Update is called once per frame
