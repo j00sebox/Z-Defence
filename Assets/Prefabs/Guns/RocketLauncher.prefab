@@ -14,15 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 4
   purchased: 0
-  timeBetweenShots: 0
-  range: 0
+  timeBetweenShots: 1
+  range: 100
   shootableMask: 0
   effectsDisplayTime: 0
-  damagePerHit: 0
+  damagePerHit: 80
   magSize: 0
   maxAmmo: 5
   totalAmmo: 0
   ammoinMag: 0
+  GunShotClip: {fileID: 8300000, guid: 40e71b0f7bd610849b40f150553f4702, type: 3}
+  source: {fileID: 0}
+  audioPitch: {x: 0.9, y: 1.1}
+  rocketVel: 5000
+  muzzlePrefab: {fileID: 450044020708499364, guid: 93a162fc463d2d842a8c25e141618684,
+    type: 3}
+  muzzlePosition: {fileID: 4220450234925590700}
+  projectilePrefab: {fileID: 4092872357349286730, guid: 5269dd52fdc50ea429c6b6a65cc1161e,
+    type: 3}
 --- !u!1001 &577488340104196058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39,6 +48,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643882369342148042, guid: f26add0b8561051438426890f3bd0f19,
+        type: 3}
+      propertyPath: reloadSource
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3826672958807468583, guid: f26add0b8561051438426890f3bd0f19,
         type: 3}
@@ -120,11 +134,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketLauncher
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2205214468985690845, guid: f26add0b8561051438426890f3bd0f19, type: 3}
+    - {fileID: 3643882369342148042, guid: f26add0b8561051438426890f3bd0f19, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f26add0b8561051438426890f3bd0f19, type: 3}
 --- !u!1 &3914583489414471495 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4490302565791019165, guid: f26add0b8561051438426890f3bd0f19,
+    type: 3}
+  m_PrefabInstance: {fileID: 577488340104196058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4220450234925590700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3643882368892340086, guid: f26add0b8561051438426890f3bd0f19,
     type: 3}
   m_PrefabInstance: {fileID: 577488340104196058}
   m_PrefabAsset: {fileID: 0}

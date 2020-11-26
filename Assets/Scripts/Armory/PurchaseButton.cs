@@ -49,6 +49,8 @@ public class PurchaseButton : MonoBehaviour
                 pText.text = "Buy Ammo";
                 gunCostText.enabled = false;
                 costText.enabled = true;
+                AmmoManager.guns[(int)gunUI.type].amount = AmmoManager.guns[(int)gunUI.type].maxAmmo;
+                ammoText.text = "Ammo: " + AmmoManager.guns[ammoIndex].amount;
             }
         }
         else

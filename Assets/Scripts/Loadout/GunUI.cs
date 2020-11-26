@@ -7,6 +7,8 @@ public class GunUI : MonoBehaviour
 {
     public bool purchased = false;
 
+    public Guns.Weapons type;
+
     Image gunImage;
 
     // Start is called before the first frame update

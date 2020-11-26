@@ -1224,6 +1224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchased: 1
+  type: 0
 --- !u!1 &165614959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +2796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchased: 0
+  type: 0
 --- !u!114 &294936357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2808,6 +2810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchased: 0
+  type: 2
 --- !u!1 &297988669
 GameObject:
   m_ObjectHideFlags: 0
@@ -9277,6 +9280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchased: 0
+  type: 1
 --- !u!1 &1399003311
 GameObject:
   m_ObjectHideFlags: 0
@@ -9829,6 +9833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchased: 0
+  type: 4
 --- !u!1 &1442816421
 GameObject:
   m_ObjectHideFlags: 0
@@ -9947,6 +9952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   purchased: 0
+  type: 3
 --- !u!1 &1458364273
 GameObject:
   m_ObjectHideFlags: 0
