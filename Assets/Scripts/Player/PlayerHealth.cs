@@ -65,28 +65,33 @@ public class PlayerHealth : MonoBehaviour
         if (godMode)
             return;
 
-        // Set the damaged flag so the screen will flash.
-        damaged = true;
-
-        // Reduce the current health by the damage amount.
-        currentHealth -= amount;
-
-        UpdateHealthBar();
-        
-        // Play the hurt sound effect.
-        //playerAudio.Play();
-
-        // If the player has lost all it's health and the death flag hasn't been set yet...
-        if (currentHealth <= 0 && !isDead)
+        if(!isDead)
         {
-            // ... it should die.
-            Death();
+            // Set the damaged flag so the screen will flash.
+            damaged = true;
+
+            // Reduce the current health by the damage amount.
+            currentHealth -= amount;
+
+            UpdateHealthBar();
+            
+            // Play the hurt sound effect.
+            //playerAudio.Play();
+
+            // If the player has lost all it's health and the death flag hasn't been set yet...
+            if (currentHealth <= 0)
+            {
+                // ... it should die.
+                Death();
+            }
         }
+        
     }
 
     void Death()
     {
-
+        isDead = true;
+        GameOverManager.gameOver.Invoke();
     }
 
     void UpdateHealthBar()

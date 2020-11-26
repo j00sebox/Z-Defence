@@ -6,6 +6,8 @@ public class ZombieHealth : MonoBehaviour
 {
     public int health = 50;
 
+    bool deathSequence = false;
+
     Animator anim;
 
     int deathType;
@@ -26,7 +28,7 @@ public class ZombieHealth : MonoBehaviour
 
         health -= damageTaken;
 
-        if(IsDead())
+        if(IsDead() && !deathSequence)
         {
             deathType = Random.Range(0, 1);
 
@@ -38,6 +40,8 @@ public class ZombieHealth : MonoBehaviour
             {
                 anim.SetTrigger("Dead2");
             }
+
+            deathSequence = true;
 
             RoundManager.zombiesInRound--;
             PointsManager.points += 10 * ComboManager.comboMultiplier;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RoundManager : MonoBehaviour
 {
-    public int roundNumber = 0;
+    public static int roundNumber = 0;
     public static bool roundStarted = false;
 
     public static int zombiesInRound;

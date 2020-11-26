@@ -48,7 +48,11 @@ public abstract class Guns : MonoBehaviour
         shootableMask = LayerMask.GetMask ("Shootable");
 
         gunLine = GetComponentInChildren <LineRenderer> ();
+
+        Setup();
     }
+
+    public virtual void Setup() { }
 
     public virtual void Shoot()
     {
