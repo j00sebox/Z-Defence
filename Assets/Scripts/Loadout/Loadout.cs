@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Loadout : MonoBehaviour
 {
-
+    // array that holds the player's current loadout
     public Guns.Weapons[] loadout;
 
     
@@ -12,13 +12,9 @@ public class Loadout : MonoBehaviour
     void Awake()
     {
         loadout = new Guns.Weapons[2];
+
+        // loadout starts with pistol and fists
         loadout[0] = Guns.Weapons.Pistol;
         loadout[1] = Guns.Weapons.None;
-    }
-
-    public void ChangeLoadout(Guns.Weapons weapon1, Guns.Weapons weapon2)
-    {
-        loadout[0] = weapon1;
-        loadout[1] = weapon2;
     }
 }

@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     RectTransform staminabar;
 
-    public float staminaRegen = 11f;
+    public float staminaSap = 10;
 
     int sprintMultiplier = 1;
 
@@ -44,11 +44,13 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift) && currentStamina >= 0)
             {
+                // start sprinting
                 Sprint();
                 sprintMultiplier = 3;
             }
             else if (currentStamina < maxStamina)
             {
+                // when not sprinting player regains stamina
                 StamniaRegen();
                 sprintMultiplier = 1;
             }
@@ -56,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
             x = Input.GetAxis("Horizontal");
             z = Input.GetAxis("Vertical");
             
+
+            // influenced by gravity if not already on ground
             if (!cc.isGrounded)
             {
                 gravity -= 9.81f * Time.deltaTime;
@@ -65,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
                 gravity = 0;
             }
             
+            // movement that accounts for gravity
             Vector3 move = transform.right * x + transform.up * gravity + transform.forward * z;
 
             cc.Move(move * speed * sprintMultiplier * Time.deltaTime);
@@ -73,18 +78,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Sprint()
     {
-        // currentStamina -= 10 * Time.deltaTime;
+        currentStamina -= staminaSap * Time.deltaTime;
         UpdateStamBar();
     }
 
     void StamniaRegen()
     {
-        currentStamina += staminaRegen * Time.deltaTime;
+        currentStamina += 10 * Time.deltaTime;
         UpdateStamBar();
     }
 
     void UpdateStamBar()
     {
+        // width of stamina bar is 200 so needs to be converted to a percentage of that
         newStamina = ( (currentStamina / maxStamina ) * 200f);
         staminabar.sizeDelta = new Vector2(newStamina, staminabar.sizeDelta.y);
     }

@@ -11,6 +11,8 @@ public class AmmoManager : MonoBehaviour
         public int amount;
         public int maxAmmo;
     }    
+
+    // holds the ammo amount for each weapon
     public static ammoProperties[] guns;
 
     public GunDisplay gunDisplay;
@@ -30,6 +32,7 @@ public class AmmoManager : MonoBehaviour
 
     void Update()
     {
+        // determine which ammo amount should be displayed on screen
         switch(gunDisplay.currentWeapon)
         {
             case Guns.Weapons.Pistol:

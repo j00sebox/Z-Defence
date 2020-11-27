@@ -14,6 +14,7 @@ public class PauseUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // enable pause menu when it meets these conditions
         pauseMenu.enabled = ( PauseManager.Paused && !PauseManager.Controls && !GameOverManager.gameOvr );
     }
 }

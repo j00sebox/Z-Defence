@@ -18,8 +18,6 @@ public class PurchaseButton : MonoBehaviour
 
     public int ammoPerBuy;
 
-    bool isPurchased = false;
-
     public int ammoIndex;
 
     public Text ammoText;
@@ -37,6 +35,7 @@ public class PurchaseButton : MonoBehaviour
         purchase.onClick.AddListener(Purchase);    
     }
 
+    // when player navigates back to the armory the ammo count for each weapon will be updated
     void OnEnable()
     {
         ammoText.text = "Ammo: " + AmmoManager.guns[ammoIndex].amount;
@@ -44,24 +43,27 @@ public class PurchaseButton : MonoBehaviour
 
     void Purchase()
     {
+        // if gun hasn't been purchased
         if (!gunUI.purchased)
         {
+            // and player has enough points
             if (PointsManager.points >= gunCost)
             {
                 PointsManager.points -= gunCost;
-                isPurchased = true;
                 gunUI.purchased = true;
-                pText.text = "Buy Ammo";
+                pText.text = "Buy Ammo"; // change text on button
                 gunCostText.enabled = false;
                 costText.enabled = true;
+                // after purchase the gun will start with it's max ammo
                 AmmoManager.guns[(int)gunUI.type].amount = AmmoManager.guns[(int)gunUI.type].maxAmmo;
                 ammoText.text = "Ammo: " + AmmoManager.guns[ammoIndex].amount;
             }
         }
-        else
+        else // player wants to buy ammo
         {
             if (PointsManager.points >= ammoCost && AmmoManager.guns[ammoIndex].amount <  AmmoManager.guns[ammoIndex].maxAmmo)
             {
+                // if the amount of ammo added puts the ammo over the max then it will just be set to the max
                 if( (AmmoManager.guns[ammoIndex].amount + ammoPerBuy) > AmmoManager.guns[ammoIndex].maxAmmo)
                 {
                     AmmoManager.guns[ammoIndex].amount = AmmoManager.guns[ammoIndex].maxAmmo;

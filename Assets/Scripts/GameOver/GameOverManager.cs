@@ -10,6 +10,7 @@ public class GameOverManager : MonoBehaviour
 
     public Text roundSurvived;
 
+    // event to be invoked when the player dies
     static public UnityEvent gameOver = new UnityEvent();
 
     public static bool gameOvr = false;
@@ -21,6 +22,7 @@ public class GameOverManager : MonoBehaviour
         gameOver.AddListener(GameOver);
     }
 
+    // display game over screen 
     void GameOver()
     {
         screen.enabled = true;

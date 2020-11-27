@@ -23,6 +23,7 @@ public class ComboManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
+        // if the combo time expires reset multiplier
         if(timer >= comboTime)
         {
             timer = 0f;
@@ -31,6 +32,8 @@ public class ComboManager : MonoBehaviour
             comboMultiplier = 1f;
         }
 
+
+        // after a zombie dies the combo becomes active
         if(zombieKilled)
         {
             if(comboActive)
@@ -39,9 +42,10 @@ public class ComboManager : MonoBehaviour
                 textActive = true;
             }
 
+            // reset timer 
             timer = 0f;
             comboActive = true;
-            zombieKilled = false;
+            zombieKilled = false; // another zombie needs to be killed in order to increase the multiplier
         }
     }
 }

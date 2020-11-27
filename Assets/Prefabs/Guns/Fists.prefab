@@ -543,7 +543,7 @@ MonoBehaviour:
   range: 0
   shootableMask: 0
   effectsDisplayTime: 0
-  damagePerHit: 0
+  damagePerHit: 50
   magSize: 0
   maxAmmo: 0
   totalAmmo: 0

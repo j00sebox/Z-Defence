@@ -2,8 +2,4 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AssaultRifle : Guns
-{
-    
-    
-}
+public class AssaultRifle : Guns { }

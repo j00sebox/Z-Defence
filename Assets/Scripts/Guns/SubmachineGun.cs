@@ -2,7 +2,4 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubmachineGun : Guns
-{
-
-}
+public class SubmachineGun : Guns { }

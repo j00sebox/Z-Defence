@@ -16,6 +16,7 @@ public class ComboUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // display the combo if there is one active
         if(ComboManager.textActive)
         {
             text.enabled = true;

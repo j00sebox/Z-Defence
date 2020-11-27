@@ -41,20 +41,18 @@ public class PlayerHealth : MonoBehaviour
     {
         if(!PauseManager.Paused)
         {
-            // If the player has just been damaged...
+            // screen flashed red if player was damaged
             if (damaged)
             {
-                // ... set the colour of the damageImage to the flash colour.
                 damageImage.color = flashColour;
             }
-            // Otherwise...
+            // otherwise the screen goes back to clear
             else
             {
-                // ... transition the colour back to clear.
                 damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
             }
 
-            // Reset the damaged flag.
+            // reset the damaged flag
             damaged = false;
         }
         
@@ -67,21 +65,16 @@ public class PlayerHealth : MonoBehaviour
 
         if(!isDead)
         {
-            // Set the damaged flag so the screen will flash.
             damaged = true;
 
-            // Reduce the current health by the damage amount.
+            // reduce the current health by the damage amount
             currentHealth -= amount;
 
             UpdateHealthBar();
-            
-            // Play the hurt sound effect.
-            //playerAudio.Play();
 
-            // If the player has lost all it's health and the death flag hasn't been set yet...
+            // if player is dead
             if (currentHealth <= 0)
             {
-                // ... it should die.
                 Death();
             }
         }
@@ -91,12 +84,13 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
+        // invoke the game over event
         GameOverManager.gameOver.Invoke();
     }
 
     void UpdateHealthBar()
     {
-        // Set the health bar's value to the current health.
+        // need to convert health to percentage of health bar width
         if (currentHealth <= 0)
         {
             healthbar.sizeDelta = new Vector2(0, healthbar.sizeDelta.y);

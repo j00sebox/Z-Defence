@@ -25,6 +25,7 @@ public class Preview : MonoBehaviour
         ChangeColour();
     }
 
+    // instantiate the actual gameobject and destroy the preview
     public void Place()
     {
         Instantiate (prefab, transform.position, transform.rotation);
@@ -33,7 +34,7 @@ public class Preview : MonoBehaviour
 
     void ChangeColour()
     {
-
+        // for obstacles that are made up of multiple objects
         children = GetComponentsInChildren<MeshRenderer>();
 
         if(children == null)
@@ -41,6 +42,7 @@ public class Preview : MonoBehaviour
             children[0] = rend;
         }
 
+        // change to green if it is able to be placed there
         if(canPlace)
         {
             foreach (MeshRenderer r in children)
@@ -49,6 +51,7 @@ public class Preview : MonoBehaviour
             } 
             
         }
+        // red if not
         else
         {
             foreach (MeshRenderer r in children)
@@ -59,7 +62,7 @@ public class Preview : MonoBehaviour
         }
     }
 
-
+    // uses collider to determine if it can be placed
     void OnTriggerEnter(Collider other)
     {
         canPlace = false;

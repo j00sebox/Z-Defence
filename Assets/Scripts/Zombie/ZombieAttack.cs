@@ -16,7 +16,6 @@ public class ZombieAttack : MonoBehaviour
 
     void Awake ()
     {
-        // Setting up the references.
         player = GameObject.FindGameObjectWithTag ("Player");
         playerHealth = player.GetComponent <PlayerHealth> ();
         zHealth = GetComponent<ZombieHealth>();
@@ -24,20 +23,17 @@ public class ZombieAttack : MonoBehaviour
     }
     void OnCollisionEnter (Collision other)
     {
-        // If the entering collider is the player...
+        // if player enters collider the zombie can attack
         if(other.gameObject == player)
         {
-            // ... the player is in range.
             playerInRange = true;
         }
     }
 
     void OnCollisionExit (Collision other)
     {
-        // If the exiting collider is the player...
         if(other.gameObject == player)
         {
-            // ... the player is no longer in range.
             playerInRange = false;
         }
     }
@@ -46,35 +42,25 @@ public class ZombieAttack : MonoBehaviour
     {   
         if(!PauseManager.Paused)
         {
-            // Add the time since Update was last called to the timer.
             timer += Time.deltaTime;
 
-            // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
+            // if it meets these conditions then zombie can attack
             if(timer >= timeBetweenAttacks && playerInRange && zHealth.CurrentHealth() > 0)
             {
-                // ... attack.
                 Attack ();
             }
-
-            // If the player has zero or less health...
-            // if(playerHealth.currentHealth <= 0)
-            // {
-            //     // ... tell the animator the player is dead.
-            //     anim.SetTrigger ("PlayerDead");
-            // }
         }
         
     }
 
     void Attack ()
     {
-        // Reset the timer.
+        // reset
         timer = 0f;
 
-        // If the player has health to lose...
+        // if player isn't dead
         if(playerHealth.currentHealth > 0)
         {
-            // ... damage the player.
             anim.SetTrigger("Attack");
             playerHealth.TakeDamage (attackDamage);
         }

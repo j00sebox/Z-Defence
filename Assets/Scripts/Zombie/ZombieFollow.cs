@@ -10,7 +10,7 @@ public class ZombieFollow : MonoBehaviour
 
     Animator anim;
 
-    float speed = 0.5f;
+    float speed = 0.2f; // running speed
 
     float walkingSpeed = 0.1f;
 
@@ -39,12 +39,16 @@ public class ZombieFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if player isn't dead
         if(!healthScript.IsDead() && !PauseManager.Paused)
         {
+            // look at player
             targetPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             transform.LookAt(targetPosition);
 
-            if(Physics.Raycast(transform.position + Vector3.up*17, transform.TransformDirection(Vector3.forward), out vision, 1000f))
+
+            // look for player, if in line of sight chase after them, else walk
+            if(Physics.Raycast(transform.position + Vector3.up*15, transform.TransformDirection(Vector3.forward), out vision, 1000f))
             {
                 if(vision.collider.gameObject == player)
                 {

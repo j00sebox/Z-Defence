@@ -12,10 +12,9 @@ public class ZombieHealth : MonoBehaviour
 
     int deathType;
 
-     CapsuleCollider capsuleCollider;
+    CapsuleCollider capsuleCollider;
 
-     float sinkSpeed = 2.5f;
-
+    float sinkSpeed = 2.5f;
 
     void Awake()
     {
@@ -28,8 +27,10 @@ public class ZombieHealth : MonoBehaviour
 
         health -= damageTaken;
 
+        // if dead and has not done this sequence before
         if(IsDead() && !deathSequence)
         {
+            // choose a random death animation
             deathType = Random.Range(0, 1);
 
             if(deathType == 1)
@@ -43,9 +44,12 @@ public class ZombieHealth : MonoBehaviour
 
             deathSequence = true;
 
+            // one less zombie in round
             RoundManager.zombiesInRound--;
-            PointsManager.points += 10 * ComboManager.comboMultiplier;
+            PointsManager.points += 100 * ComboManager.comboMultiplier;
             ComboManager.zombieKilled = true;
+
+            // need to set as kinematic so zombie can sink through floor
             SetKinematics(true);
         }
     
@@ -73,6 +77,7 @@ public class ZombieHealth : MonoBehaviour
     {
         if(IsDead())
         {
+            // when dead the zombie will gradually sink lower beneath the map until it's delelted
             transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
             if (transform.position.y < -5f)
             {

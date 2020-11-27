@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
+    // first person camera
     Transform cam;
 
+    // gun the player has selected
     Transform gun;
 
     Guns gunScript;
 
     float timer;
-
-    float timeBetweenMelee = 0.5f;
-
-    
-
-    public int meleeDamage = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +24,10 @@ public class PlayerShooting : MonoBehaviour
         gunScript = gun.GetComponentInChildren<Guns> (); 
     }
 
+    // when the player switches weapons this is called to get the reference of the new prefab
     public void NewRef(GameObject gun)
     {
         gunScript = gun.GetComponentInChildren<Guns> ();
-        // = gunScript.totalAmmo;
     }
 
     // Update is called once per frame
@@ -39,24 +35,25 @@ public class PlayerShooting : MonoBehaviour
     {
         if(RoundManager.roundStarted && !PauseManager.Paused)
         {
-            // Add the time since Update was last called to the timer.
+            // add the time since Update was last called to the timer.
             timer += Time.deltaTime;
 
             if(gunScript != null)
             {
+                // if the time between shots has expired and player has enough ammo
                 if (timer >= gunScript.timeBetweenShots && Time.timeScale != 0 && AmmoManager.currentAmmo > 0)
                 {
+                    // left mouse button
                     if( Input.GetButton("Fire1") )
                     {
+                        // reset timer and call that weapons shoot function
                         timer = 0f;
                         gunScript.Shoot();
                     }
                 }
 
-                // If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
                 if(timer >= gunScript.timeBetweenShots * gunScript.effectsDisplayTime)
                 {
-                    // ... disable the effects.
                     gunScript.DisableEffects();
                 }
             }

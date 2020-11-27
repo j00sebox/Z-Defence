@@ -48,6 +48,7 @@ public class BuildUIManager : MonoBehaviour
 
         canvas = GetComponentInParent<Canvas> ();
 
+        // each obstacle gets a button that will call it's own function to build it
         Button boxButton = images[1].GetComponent<Button> ();
         boxButton.onClick.AddListener(ChooseBox);
 
@@ -74,6 +75,7 @@ public class BuildUIManager : MonoBehaviour
 
     void Update()
     {
+        // when in the middle of a build it will hide the building UI
         if(buildSystem.IsBuilding)
         {
             canvas.enabled = false;

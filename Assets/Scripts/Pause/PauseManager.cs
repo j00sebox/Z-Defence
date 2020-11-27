@@ -13,10 +13,13 @@ public class PauseManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            // if not on controls screen
             if(!Controls)
             {
+                // switch paused status
                 Paused = !Paused;
 
+                // set cursor accordingly
                 CursorVisible();
                 
             }
@@ -25,6 +28,7 @@ public class PauseManager : MonoBehaviour
 
     public static void CursorVisible()
     {
+        // if paused or round not started then cursor should be visible
         bool vis = ( Paused || !RoundManager.roundStarted );
 
         Cursor.visible = vis;

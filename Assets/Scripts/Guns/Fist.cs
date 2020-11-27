@@ -8,7 +8,7 @@ public class Fist : Guns
 
     bool enemyInRange = false;
 
-    SphereCollider meleeRange;
+    SphereCollider meleeRange; // range that the player needs to be in
 
     ZombieHealth enemeyAttacked;
 
@@ -22,7 +22,9 @@ public class Fist : Guns
 
     public override void Shoot()
     {
-        GetComponentInChildren<Fist> ().SetAnim();
+        GetComponentInChildren<Fist> ().SetAnim(); // start punching animation
+
+        // if player in range then health can be taken from the zombie
         if(enemyInRange)
         {
             ZombieHealth zHealthScript = enemeyAttacked.GetComponent<ZombieHealth> ();

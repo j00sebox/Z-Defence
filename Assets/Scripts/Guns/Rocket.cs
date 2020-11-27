@@ -20,9 +20,6 @@ public class Rocket : MonoBehaviour
     // --- Script Variables ---
     private bool targetHit;
 
-    // --- Audio ---
-    public AudioSource inFlightAudioSource;
-
     // --- VFX ---
     public ParticleSystem disableOnHit;
 
@@ -31,7 +28,7 @@ public class Rocket : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
 
-         // --- Explode when hitting an object and disable the projectile mesh ---
+         // explode when it hits something
         Explode();
 
         ZombieHealth zh = other.collider.gameObject.GetComponent<ZombieHealth> ();
@@ -41,13 +38,16 @@ public class Rocket : MonoBehaviour
         }
 
 
-        // --- Destroy this object after 2 seconds. Using a delay because the particle system needs to finish ---
+        // destroy
         Destroy(gameObject);
     }
 
     void Explode()
     {
-        // --- Instantiate new explosion option. I would recommend using an object pool ---
+        // create new explosion
         GameObject newExplosion = Instantiate(rocketExplosion, transform.position, rocketExplosion.transform.rotation);
+
+        // destroy the explosion object after a few seconds
+        Destroy(newExplosion, 2f);
     }
 }
