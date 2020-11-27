@@ -12,6 +12,8 @@ public class GameOverManager : MonoBehaviour
 
     static public UnityEvent gameOver = new UnityEvent();
 
+    public static bool gameOvr = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,8 @@ public class GameOverManager : MonoBehaviour
     void GameOver()
     {
         screen.enabled = true;
-        //PauseManager.Paused = true;
+        gameOvr = true;
+        PauseManager.Paused = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         roundSurvived.text = "You survived " + RoundManager.roundNumber + " rounds";

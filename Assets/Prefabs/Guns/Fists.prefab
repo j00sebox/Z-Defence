@@ -538,7 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 5
   purchased: 0
-  offset: -1
+  offset: -0.5
   timeBetweenShots: 0.5
   range: 0
   shootableMask: 0

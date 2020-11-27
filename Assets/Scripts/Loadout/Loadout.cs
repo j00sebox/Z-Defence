@@ -13,6 +13,7 @@ public class Loadout : MonoBehaviour
     {
         loadout = new Guns.Weapons[2];
         loadout[0] = Guns.Weapons.Pistol;
+        loadout[1] = Guns.Weapons.None;
     }
 
     public void ChangeLoadout(Guns.Weapons weapon1, Guns.Weapons weapon2)

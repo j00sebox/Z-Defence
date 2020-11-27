@@ -39,6 +39,8 @@ public class RoundManager : MonoBehaviour
         roundStarted = false;
         PauseManager.Paused = false;
         PauseManager.Controls = false;
+        GameOverManager.gameOvr = false;
+        PointsManager.points = 0;
     }
 
 

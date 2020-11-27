@@ -16,34 +16,50 @@ public class BuildSystem : MonoBehaviour
 
     int currentCost;
 
+    float y_offset = 0f;
+
     void Update()
     {
-        // rotate
-        if (Input.GetKeyDown(KeyCode.R) && IsBuilding)
+        if(IsBuilding)
         {
-            prevGameObject.transform.Rotate(0, 90f, 0);
-        }
-
-        // cancel
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CancelBuild();
-        }
-
-        // build
-        if (Input.GetMouseButtonDown(0) && IsBuilding)
-        {
-            if(prev.canPlace)
+            // rotate
+            if (Input.GetKeyDown(KeyCode.R))
             {
-               BuildIt();
+                prevGameObject.transform.Rotate(0, 90f, 0);
             }
-        }
 
-        if (IsBuilding)
-        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                y_offset += 10f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                if(y_offset > 0)
+                {
+                    y_offset -= 10f;
+                }
+            }
+
             DoBuildRay();
-        }
 
+            // build
+            if (Input.GetMouseButtonDown(0))
+            {
+                if(prev.canPlace)
+                {
+                    BuildIt();
+                }
+            }
+
+            // cancel
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                CancelBuild();
+            }
+            
+        }
+        
     }
 
     public void NewBuild(GameObject go, int cost)
@@ -54,6 +70,7 @@ public class BuildSystem : MonoBehaviour
             currentCost = cost;
             prevGameObject = Instantiate(go, Vector3.zero, Quaternion.identity);
             prev = prevGameObject.GetComponent<Preview> ();
+            y_offset = 0f;
         }
     }
 
@@ -63,12 +80,13 @@ public class BuildSystem : MonoBehaviour
         prevGameObject = null;
         prev = null;
         IsBuilding = false;
+        y_offset = 0f;
     }
 
     void BuildIt()
     {
         prev.Place();
-        PointsManager.points -= currentCost;
+        if(PointsManager.points >= currentCost) PointsManager.points -= currentCost;
         prevGameObject = null;
         prev = null;
         IsBuilding = false;
@@ -83,7 +101,7 @@ public class BuildSystem : MonoBehaviour
         {
             float y = hit.point.y + (prevGameObject.transform.localScale.y / 2f);
             Vector3 pos = new Vector3(hit.point.x, y, hit.point.z);
-            prevGameObject.transform.position = pos;
+            prevGameObject.transform.position = pos + new Vector3(0, y_offset, 0);
         }
     }
 }
