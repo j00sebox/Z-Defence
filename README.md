@@ -18,3 +18,19 @@ The camera switches from a first person view to a top down view where the player
 Overtime the player can build up their base to help them fend off zombies.
 
 ![Build_Menu](screenshots/building_menu.PNG)
+
+Armory:
+
+This is where the player can purchase guns and ammo.
+
+After they purchase the gun they have to equip in in the loadout menu if they want to use it.
+
+![Armory_Menu](screenshots/armory_menu.PNG)
+
+Loadout:
+
+This is where the player can customize what weapons they take into the round.
+
+You cannot change the loadout mid round so it is important that you choose the right weapons
+
+![Loadout_Menu](screenshots/loadout_menu.PNG)
