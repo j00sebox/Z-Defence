@@ -9,7 +9,7 @@ Gun Models:
   
 Zombie model provided by Pxltiger
 
-##Building:
+## Building:
 
 At the end of every round the player has the opportunity to spend their points building their base.
 
@@ -19,7 +19,7 @@ Overtime the player can build up their base to help them fend off zombies.
 
 ![Build_Menu](screenshots/building_menu.PNG)
 
-##Armory:
+## Armory:
 
 This is where the player can purchase guns and ammo.
 
@@ -27,7 +27,7 @@ After they purchase the gun they have to equip in in the loadout menu if they wa
 
 ![Armory_Menu](screenshots/armory_menu.PNG)
 
-##Loadout:
+## Loadout:
 
 This is where the player can customize what weapons they take into the round.
 
@@ -35,7 +35,7 @@ You cannot change the loadout mid round so it is important that you choose the r
 
 ![Loadout_Menu](screenshots/loadout_menu.PNG)
 
-##Gameplay:
+## Gameplay:
 
 The rounds last until all the zombies are killed or the player dies.
 
